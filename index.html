@@ -1,93 +1,245 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>opelsifirmotor.com.tr - çok yakında</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            width: 90%;
-            padding: 40px;
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            border-top: 4px solid #e00000;
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #e00000;
-            text-transform: lowercase;
-        }
-        h2 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            font-weight: normal;
-            text-transform: lowercase;
-        }
-        p {
-            font-size: 16px;
-            color: #b3b3b3;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .contact-info {
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 30px;
-        }
-        .contact-info div {
-            margin-bottom: 12px;
-            font-size: 16px;
-            color: #ffffff;
-        }
-        .contact-info div:last-child {
-            margin-bottom: 0;
-        }
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            background-color: #25D366;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #128C7E;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>opelsifirmotor.com.tr</h1>
-        <h2>çok yakında hizmetinizdeyiz</h2>
-        <p>Opel sıfır sandık motor ve rektefiyeli motor seçeneklerimizle çok yakında yeni web sitemizde yayındayız. Detaylı bilgi, stok durumu ve siparişleriniz için bizimle doğrudan iletişime geçebilirsiniz.</p>
-        
-        <div class="contact-info">
-            <div>İletişim: 0553 738 38 06</div>
-            <div>İletişim: 0534 844 18 61</div>
-            <div>Adres: Serhat Mah. 1126. Cad. No: 14 Yenimahalle/Ankara</div>
-        </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Opel Sıfır Motor | Çok Yakında</title>
+<meta name="description" content="Opel sıfır motor seçenekleri çok yakında burada.">
 
-        <a href="https://wa.me/905537383806" class="btn" target="_blank">whatsapp ile ulaşın</a>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    background: #030303;
+}
+
+body {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 15px 25px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 45%, #252525 0%, #0b0b0b 48%, #000 100%);
+}
+
+.brand {
+    text-align: center;
+    font-size: clamp(26px, 5vw, 48px);
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+.brand span,
+.coming h1 span {
+    color: #e32626;
+}
+
+.red-line {
+    width: 65px;
+    height: 3px;
+    background: #e32626;
+    margin: 18px auto 20px;
+}
+
+.car-area {
+    width: min(100%, 1050px);
+    position: relative;
+    margin: 0 auto;
+}
+
+.car-photo {
+    width: 100%;
+    display: block;
+    height: auto;
+    filter: brightness(.34) contrast(1.2) saturate(.75);
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 12%,
+        black 85%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 12%,
+        black 85%,
+        transparent 100%
+    );
+}
+
+/* Far ışıkları: fotoğraf üzerindeki konumlar */
+.headlight {
+    position: absolute;
+    top: 43%;
+    width: 9%;
+    height: 8%;
+    border-radius: 50%;
+    background: rgba(210, 230, 255, .08);
+    filter: blur(9px);
+    opacity: .15;
+    animation: blink 3.2s infinite;
+    pointer-events: none;
+}
+
+.headlight.left {
+    left: 70%;
+}
+
+.headlight.right {
+    left: 91%;
+    width: 6%;
+    animation-delay: .15s;
+}
+
+.beam {
+    position: absolute;
+    top: 41%;
+    width: 12%;
+    height: 13%;
+    background: radial-gradient(
+        ellipse,
+        rgba(220, 235, 255, .65),
+        rgba(180, 205, 255, .15) 40%,
+        transparent 75%
+    );
+    filter: blur(8px);
+    opacity: 0;
+    animation: beam 3.2s infinite;
+    pointer-events: none;
+}
+
+.beam.left {
+    left: 68%;
+}
+
+.beam.right {
+    left: 89%;
+    width: 9%;
+    animation-delay: .15s;
+}
+
+@keyframes blink {
+    0%, 38%, 48%, 100% {
+        opacity: .12;
+    }
+    42%, 45% {
+        opacity: 1;
+        background: rgba(220, 235, 255, .95);
+    }
+}
+
+@keyframes beam {
+    0%, 38%, 48%, 100% {
+        opacity: 0;
+    }
+    42%, 45% {
+        opacity: .9;
+    }
+}
+
+.coming {
+    text-align: center;
+    margin-top: -5px;
+    position: relative;
+    z-index: 2;
+}
+
+.coming h1 {
+    font-size: clamp(27px, 5vw, 45px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 0 0 15px;
+}
+
+.coming p {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 560px;
+    margin: auto;
+}
+
+footer {
+    margin-top: 48px;
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+@media(max-width: 600px) {
+    .page {
+        padding: 35px 10px 20px;
+    }
+
+    .brand {
+        letter-spacing: 3px;
+    }
+
+    .coming h1 {
+        letter-spacing: 2px;
+    }
+
+    .coming p {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+    <div class="brand">
+        OPEL <span>SIFIR MOTOR</span>
     </div>
+
+    <div class="red-line"></div>
+
+    <div class="car-area">
+
+        <img
+            class="car-photo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Opel_Insignia-sedan_Front-view.JPG/1280px-Opel_Insignia-sedan_Front-view.JPG"
+            alt="Gerçek Opel Insignia"
+        >
+
+        <div class="headlight left"></div>
+        <div class="headlight right"></div>
+
+        <div class="beam left"></div>
+        <div class="beam right"></div>
+
+    </div>
+
+    <section class="coming">
+        <h1>ÇOK <span>YAKINDA</span></h1>
+
+        <p>
+            Opel sıfır motor seçenekleriyle çok yakında sizlerleyiz.
+            Yeni web sitemiz için hazırlıklarımız devam ediyor.
+        </p>
+    </section>
+
+    <footer>
+        YAKINDA YAYINDAYIZ TELEFON VE WHATSAPP 0553 738 38 06 - 0534 844 18 61 
+    </footer>
+
+</main>
 </body>
 </html>
